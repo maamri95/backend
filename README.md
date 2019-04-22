@@ -5,5 +5,6 @@ API pour chiffre et dechiffre des msg en utilisant un bichiffrement vigenere hil
 # installation
 
 cd backend <br>
-pip install pipenv <br>
-pipenv install
+virtualenv venv <br>
+source /path/to/ENV/bin/activate <br>
+pip install
