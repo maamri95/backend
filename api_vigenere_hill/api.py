@@ -61,9 +61,9 @@ def inversible():
     returne 200 si la matrice est inversible sinon 404
     :return:
     """
-    matrice = request.json.get("matrice")
+    cleHill = request.json.get("cleHill")
     try:
-        inv(matrice)
+        inv(cleHill)
         render("cette matrice a un inverse", 200)
     except ArithmeticError:
         return render("impossible d'inverse cette matrice", 404)
@@ -90,13 +90,13 @@ def parametre(requestparam):
     :param requestparam:
     :return:
     """
-    cle_hill: list = requestparam.json.get("cle_hill")
-    cle_vigenere: str = requestparam.json.get("cle_vigenere")
-    for c in cle_vigenere:
+    cleHill: list = requestparam.json.get("cleHill")
+    cleVigenere: str = requestparam.json.get("cleVigenere")
+    for c in cleVigenere:
         if not c.isalpha():
             return render("erreur cle de vigenere incorrecte elle dois etre alphabetique", 404)
-    for line in cle_hill:
+    for line in cleHill:
         for num in line:
             if not isinstance(num, int):
                 return render("la matrice dois contenir des entier", 404)
-    return VigenereHill(cle_hill, cle_vigenere)
+    return VigenereHill(cleHill, cleVigenere)
