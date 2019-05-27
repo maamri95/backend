@@ -45,7 +45,7 @@ def decrypt():
     return render(
         {
             "text_interm": text_interm,
-            "text_crypt": text_clair,
+            "text_clair": text_clair,
             "inverse": vigenere_hill.hill.tinv,
             "k": vigenere_hill.hill.k,
             "com": vigenere_hill.hill.comMatrice,
